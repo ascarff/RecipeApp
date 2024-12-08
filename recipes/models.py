@@ -22,7 +22,7 @@ class Recipe(models.Model):
     instructions = models.TextField(blank=True, null=True)
     macros = models.TextField(blank=True, null=True)
     category = models.ManyToManyField('Category', blank=True)
-
+    active = models.BooleanField(default=True)
 
     def __str__(self) -> str:
         return " ".join(map(str,[self.name]))
